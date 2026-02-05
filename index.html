@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <audio id = "audio1" src ="audio1.mp3" autoplay onended = "document.getElementById('audio2').play();"></audio>
+        <audio id = "audio1" src ="audio1.mp3" onended = "document.getElementById('audio2').play();"></audio>
         <audio id = "audio2" src ="audio2.mp3" onended = "document.getElementById('audio3').play();"></audio>
         <audio id = "audio3" src ="audio3.mp3" onended = "document.getElementById('audio4').play();"></audio>
         <audio id = "audio4" src ="audio4.mp3"></audio>
@@ -70,7 +70,7 @@
                 </div>
             </div>
             <div id ="controls">
-                <button id="left-btn" class="button" onclick="moveClaw('left')"><img src="https://static.thenounproject.com/png/3491196-200.png" alt="Left Arrow" style="height:65%; width:80%;"></button>
+                <button id="left-btn" class="button" onclick="moveClaw('left'); document.getElementById('audio1').play();"><img src="https://static.thenounproject.com/png/3491196-200.png" alt="Left Arrow" style="height:65%; width:80%;"></button>
                 <button id="right-btn" class="button" onclick="moveClaw('right')"><img src="https://static.thenounproject.com/png/3491196-200.png" alt="Right Arrow" style="transform: rotate(180deg); height:65%; width:80%;"></button>
                 <button id="grab-btn" class="button" onclick="grabPrize()">Grab</button>
             </div>
@@ -220,4 +220,5 @@
         
     }
 </script>
+
 
