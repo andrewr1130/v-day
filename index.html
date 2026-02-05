@@ -73,13 +73,12 @@
                 <button id="left-btn" class="button" onclick="moveClaw('left')"><img src="https://static.thenounproject.com/png/3491196-200.png" alt="Left Arrow" style="height:65%; width:80%;"></button>
                 <button id="right-btn" class="button" onclick="moveClaw('right')"><img src="https://static.thenounproject.com/png/3491196-200.png" alt="Right Arrow" style="transform: rotate(180deg); height:65%; width:80%;"></button>
                 <button id="grab-btn" class="button" onclick="grabPrize()">Grab</button>
+                <button id="music-btn" class="button" onclick="document.getElementById('audio1').play();"><img src="https://www.freeiconspng.com/uploads/black-music-note-icon-6.png" alt="Music" style="height: 200%; width: 200%; transform: translate(-25%, -25%);"></button>
             </div>
         </div>
     </main>
 </body>
-<script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
 <script>
-    document.getElementById('audio1').play();
     let count = 0;
 
     function moveClaw(direction) {
@@ -220,6 +219,7 @@
         
     }
 </script>
+
 
 
 
