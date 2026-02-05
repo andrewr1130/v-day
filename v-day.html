@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V-Day Celebration</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+</head>
+<body>
+    <header>
+        <audio id = "audio1" src ="audio1.mp4" autoplay onended = "document.getElementById('audio2').play();"></audio>
+        <audio id = "audio2" src ="audio2.mp4" onended = "document.getElementById('audio3').play();"></audio>
+        <audio id = "audio3" src ="audio3.mp4" onended = "document.getElementById('audio4').play();"></audio>
+        <audio id = "audio4" src ="audio4.mp4"></audio>
+        <h1>Happy Valentine's Day! ❤️</h1>
+        <p>Play My Claw Machine For Special Prizes!</p>
+        <p id = "no-prize-message"> NO PRIZE TRY AGAIN</p>
+        <p id = "prize-message"> CONGRATS YOU GOT A PRIZE!</p>
+
+    </header>
+    <main>
+        <div id = "heart1" class="heart"> </div>
+        <div id = "heart2" class="heart"> </div>
+        <div id = "prize-reveal-container"> 
+            <span class="prize-reveal" id="prize1-reveal" onclick="document.getElementById('close-reveal-btn').style.display='block'; document.querySelectorAll('.prize-reveal').forEach(el => el.style.display = 'none'); document.getElementById('chocolates').style.display='block'">Click To Reveal</span>
+            <span class= "gifts" id = "chocolates"> <p class = "gift-text">YOU WON VIRTUAL CHOCOLATES!! (To Be Replaced With Real Chocolates FEB. 14)</p> <img src="https://www.flowerlabusa.com/cdn/shop/products/image_c0525e64-df12-4ab4-901c-2f0a57bdbff4_600x.jpg?v=1674845365" alt = "chocolates" style = "width:70%; height:70%"></span>
+            <span class="prize-reveal" id="prize2-reveal" onclick="document.getElementById('close-reveal-btn').style.display='block'; document.querySelectorAll('.prize-reveal').forEach(el => el.style.display = 'none'); document.getElementById('presents').style.display='block'">Click To Reveal</span>
+            <span class= "gifts" id = "presents"><p class = "gift-text">YOU WON VIRTUAL PRESENTS!! (To Be Replaced With Real Presents FEB. 14)</p> <img src="https://img.freepik.com/free-photo/decorative-heart-near-heap-gift-boxes-wrap_23-2147990919.jpg?semt=ais_hybrid&w=740&q=80" alt = "presents" style = "width:90%; height:90%"></span>
+            <span class="prize-reveal" id="prize3-reveal" onclick="document.getElementById('close-reveal-btn').style.display='block'; document.querySelectorAll('.prize-reveal').forEach(el => el.style.display = 'none'); document.getElementById('date-night').style.display='block'">Click To Reveal</span>
+            <span class = "gifts" id="date-night"> <p class ="gift-text">YOU WON A SURPRISE DATE NIGHT FEBRURARY 14TH @ 6PM, Dress Nice and Be Ready. (Might want to set a reminder)</p><img src="https://images.emojiterra.com/google/noto-emoji/unicode-15/color/512px/2753.png" alt="question-mark" style = "width: 60%; height: 60%"></span>
+            <span class="prize-reveal" id="prize4-reveal" onclick="document.getElementById('close-reveal-btn').style.display='block'; document.querySelectorAll('.prize-reveal').forEach(el => el.style.display = 'none'); document.getElementById('flowers').style.display='block'">Click To Reveal</span>
+            <span class = "gifts" id="flowers"> <p class ="gift-text">YOU WON VIRTUAL FLOWERS!! (To Be Replaced With Real Flowers FEB. 14)</p> <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSHI_UmUOsPMcibLDxP4WI1F29l1o8kRDlbtqkq_J9xvpLc-ITF0gjraO3N173GUkkmYzFdAMCNyQJ6HRpbbdr2zlfFNnZWSMn3ZSSTdEAaCTrugYRFRvSkfxWxBXP3kpnhWm24FK8&usqp=CAc" alt="flowers"> </span>            
+            <span class="prize-reveal" id="prize5-reveal" onclick="document.getElementById('close-reveal-btn').style.display='block'; document.querySelectorAll('.prize-reveal').forEach(el => el.style.display = 'none'); document.getElementById('me').style.display='block'">Click To Reveal</span>
+            <span class = "gifts" id="me"> <p class ="gift-text"> YOU WON ME!! (The Best Gift You Can Ask For hehehe)</p><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhtdUHmwCfL2iMykyCfR4rRKFGwSpIIUBkxN7eXzB02Kmr1YMkfB6vbd0Rer7PYj3onucPcyvES9podOUmdSg3mWi6m401xkdoolhyJCrEo0lXWiK6rc8yDfapbj4JdWifpPntFa4EJJRNc/s1600/465___blowing-a-kiss-emoticon.png" alt="kissing-emoji" style="width: 100%; height:100%"></span>
+            <button id="close-reveal-btn" onclick="document.getElementById('prize-reveal-container').style.display='none'; document.getElementById('prize-message').style.display='none';  document.querySelectorAll('.gifts').forEach(el => el.style.display = 'none'); document.getElementById('close-reveal-btn').style.display='none'; if (count >= 5){document.getElementById('be-mine').style.display = 'block'};" >Claim!</button>
+        </div>
+        <div id="be-mine">
+            <h2 id = "all-prizes-message">CONGRATS YOU GOT ALL THE PRIZES!!</h2>
+            <h3 id = "valentine-question"> So Will You Be My Valentine? (And Officially My Girlfriend?)</h3>
+            <button id = "yes-btn" class = "yes-buttons" onclick="document.getElementById('heart-message-text').style.display='block'; document.getElementById('heart-message-heart').style.display='block'; document.querySelectorAll('.yes-buttons').forEach(el => el.style.display='none'); document.querySelectorAll('.no-buttons').forEach(el => el.style.display='none'); document.getElementById('all-prizes-message').style.display='none'; document.getElementById('valentine-question').style.display='none';">Yes!</button>
+            <button id = "no-btn" class = "no-buttons" onclick="document.getElementById('no-btn2').style.display=''; document.getElementById('no-btn').style.display='none';">No</button>
+            <button id = "no-btn2" class = "no-buttons"style="display:none;" onclick="document.getElementById('no-btn3').style.display=''; document.getElementById('no-btn2').style.display='none';">Aww Really??</button>
+            <button id = "no-btn3" class = "no-buttons" style="display: none;" onclick="document.getElementById('no-btn4').style.display=''; document.getElementById('no-btn3').style.display='none';">Pleaseee :(</button>
+            <button id = "no-btn4" class = "no-buttons" style="display: none;" onclick="document.getElementById('no-btn5').style.display=''; document.getElementById('no-btn4').style.display='none';">I'll Do Anything!!</button>
+            <button id = "no-btn5" class = "no-buttons" style="display: none;" onclick="document.getElementById('no-btn6').style.display=''; document.getElementById('no-btn5').style.display='none';">Just Say Yes!!</button>
+            <button id = "no-btn6" class = "no-buttons" style="display: none;" onclick="document.getElementById('yes-btn1').style.display=''; document.getElementById('no-btn6').style.display='none';">Haha Jokes On You</button>
+            <button id = "yes-btn1" class = "yes-buttons" style="display: none;" onclick="document.getElementById('heart-message-text').style.display='block'; document.getElementById('heart-message-heart').style.display='block'; document.querySelectorAll('.yes-buttons').forEach(el => el.style.display='none'); document.querySelectorAll('.no-buttons').forEach(el => el.style.display='none'); document.getElementById('valentine-question').style.display='none';">Of Course!!</button>
+            <h1 id = "heart-message-text">YAYYYY!!! SO EXCITED!!! CAN'T WAIT!!!</h1>
+            <div id = "heart-message-heart" class="heart"></div>
+        </div>
+        <div class = "game">
+            <div id="claw-machine">
+                <div id="claw">
+                    <div id="claw-inner"> <!-- Solely For Animation Purposes -->
+                        <span id="claw-arm"></span>
+                        <span id="claw-grabber"></span>
+                    </div>
+                </div>
+                <div id="prize-area">
+                    <span class="prize" id="prize1"></span>
+                    <span class="prize" id="prize2"></span>
+                    <span class="prize" id="prize3"></span>
+                    <span class="prize" id="prize4"></span>
+                    <span class="prize" id="prize5"></span>
+                </div> 
+                <div id="prize-drop-area">
+                    <span id="wall"></span>
+                    <div id="prize-drop-inner"></div><!-- Solely For Animation Purposes -->
+                </div>
+            </div>
+            <div id ="controls">
+                <button id="left-btn" class="button" onclick="moveClaw('left')"><img src="https://static.thenounproject.com/png/3491196-200.png" alt="Left Arrow" style="height:65%; width:80%;"></button>
+                <button id="right-btn" class="button" onclick="moveClaw('right')"><img src="https://static.thenounproject.com/png/3491196-200.png" alt="Right Arrow" style="transform: rotate(180deg); height:65%; width:80%;"></button>
+                <button id="grab-btn" class="button" onclick="grabPrize()">Grab</button>
+            </div>
+        </div>
+    </main>
+</body>
+<script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
+<script>
+    
+    let count = 0;
+
+    function moveClaw(direction) {
+        const claw = document.getElementById("claw");
+        const game = document.querySelector(".game");
+
+        const step = game.clientWidth * 0.05; // 5% of game width (responsive)
+
+        const clawRect = claw.getBoundingClientRect();
+        const gameRect = game.getBoundingClientRect();
+
+        let currentLeft = claw.offsetLeft;
+        console.log(currentLeft);
+
+        if (direction === "left") {
+            const minLeft = 50;
+            claw.style.left = Math.max(currentLeft - step, minLeft) + "px";
+        }
+
+        if (direction === "right") {
+            const maxLeft = game.clientWidth - claw.clientWidth;
+            claw.style.left = Math.min(currentLeft + step, maxLeft) + "px";
+        }
+    }
+
+    // store references and the claw's original starting left position
+    const clawEl = document.getElementById("claw");
+    const clawGrabber = document.getElementById("claw-grabber");
+    const clawInner = document.getElementById("claw-inner");
+    let clawHomeLeft = null;
+
+    document.addEventListener('DOMContentLoaded', () => {
+        // capture the initial starting position so we can return to it later
+        clawHomeLeft = clawEl.offsetLeft;
+        // ensure an inline left exists so subsequent moves are consistent
+        clawEl.style.left = clawHomeLeft + "px";
+    });
+
+    function resetClawPosition(){
+        if (clawHomeLeft === null) return;
+        // CSS transition on `left` will make this movement smooth
+        clawEl.style.left = clawHomeLeft + "px";
+        setTimeout(() => { 
+            removePrize(); 
+        }, 600); // wait for the claw to return before dropping
+        // immediately
+    }
+
+    let grabCheck
+
+    function grabPrize(){
+        // animate the inner part (vertical grabbing motion)
+        document.getElementById("no-prize-message").style.display = "none";
+
+        clawInner.style.animation = "grab 4s ease-in-out";
+        // check for prize contact after half the animation duration (2s)
+        grabCheck = setInterval(() => {
+            const prize = touchesPrize();
+            if (prize) {
+                // prize is grabbed, move it with the claw
+                prize.style.position = "absolute";
+                prize.style.top = "150%";
+                prize.style.left = "50%";
+                prize.style.width = "100%";
+                prize.style.height = "180%";
+                prize.style.transform = "translate(-50%, -50%)";
+                clawGrabber.appendChild(prize);
+                clearInterval(grabCheck);
+            }
+        }, 50); // 2 seconds
+
+        // when the grab animation ends, remove it and smoothly reset horizontal position
+        clawInner.addEventListener('animationend', () => {
+            clearInterval(grabCheck);
+            clawInner.style.animation = "";
+            resetClawPosition();
+        }, { once: true });
+    }
+
+    function touchesPrize(){
+        const clawGrabber = document.getElementById("claw-grabber");
+        const clawRect = clawGrabber.getBoundingClientRect();
+        const prizes = document.querySelectorAll(".prize");
+
+        for (let prize of prizes) {
+            const prizeRect = prize.getBoundingClientRect();
+            // simple bounding box collision detection
+            if (!(clawRect.right < prizeRect.left || 
+                  clawRect.left > prizeRect.right || 
+                  clawRect.bottom < prizeRect.top || 
+                  clawRect.top > prizeRect.bottom)) {
+                return prize;
+            }
+        }
+        return null;
+    }
+
+    function removePrize(){
+        const clawGrabber = document.getElementById("claw-grabber");
+        const prizeDropArea = document.getElementById("prize-drop-inner");
+        const prizeRect = prizeDropArea.getBoundingClientRect();
+
+        if (!(clawGrabber.firstChild)) {
+            document.getElementById("no-prize-message").style.display = "block";
+            return; // no prize to drop
+        }
+
+        // move any prize inside the claw to the drop area
+        while (clawGrabber.firstChild) {
+            const prize = clawGrabber.firstChild;
+            clawGrabber.removeChild(prize);
+            prizeDropArea.appendChild(prize);
+            prize.style.top = "30%";
+            prize.style.left = "10%";
+            prize.style.position = "absolute";
+            prize.style.borderRadius = "50%";
+            prize.style.width = "50%";
+            prize.style.height = "15%";
+            prize.classList.add("dropping");
+            revealPrize(prize);
+            // animateDropPrize(prize);
+        }
+
+        count += 1;
+        
+    }
+
+    function revealPrize(prize){
+        setTimeout(() => {
+            prize.remove();
+            document.getElementById("prize-message").style.display = "block";
+            document.getElementById("prize-reveal-container").style.display = "block";
+            const prizeId = prize.id; // e.g., "prize1"
+            const revealId = prizeId + "-reveal"; // e.g., "prize1-reveal"
+            const revealEl = document.getElementById(revealId);
+            revealEl.style.display = "flex";
+        }, 3000); // remove from DOM after 3 seconds
+        
+    }
+</script>
